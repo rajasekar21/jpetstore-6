@@ -22,7 +22,7 @@ pipeline {
 
       }
       steps {
-        sh '''mvnw clean verify sonar:sonar \\
+        sh '''mvn clean verify sonar:sonar \\
   -Dsonar.projectKey=Jpetstore \\
   -Dsonar.host.url=http://3.110.235.71:9000 \\
   -Dsonar.login=sqp_e98187d09a902049d01c2da3158b4ce1293b3565'''
@@ -37,7 +37,7 @@ pipeline {
 
       }
       steps {
-        sh 'mvnw package -DskipTests=true'
+        sh 'mvn package -DskipTests=true'
       }
     }
 
