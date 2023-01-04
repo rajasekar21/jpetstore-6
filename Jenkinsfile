@@ -41,5 +41,17 @@ pipeline {
       }
     }
 
+    stage('Integration Test') {
+      agent {
+        node {
+          label 'test'
+        }
+
+      }
+      steps {
+        sh 'mvn verify -P tomcat90'
+      }
+    }
+
   }
 }
